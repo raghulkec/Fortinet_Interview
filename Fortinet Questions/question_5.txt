@@ -1,0 +1,17 @@
+import static org.mockito.Mockito.*;
+
+
+Then you can simply use the mock() method to create mock object instances.
+
+public class PersonServiceMockTest {
+
+private PersonService service;
+private PersonDao dao; //we will be mocking this class
+
+@Before
+public void setup() {
+dao = mock(PersonDao.class); //here is the actual mocking call
+
+service = new PersonService();
+service.setPersonDao(dao);
+}
